@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "5ec9fe9e-1702-4670-a651-99ffb593e25a",
+		"name": "Aplin Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32301667"
+	},
+	"item": [
+		{
+			"name": "Peticion POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"inventory\": [\n        {\n            \"sku\": \"A01\",\n            \"stock\": {\n                \"count\": \"12\",\n                \"blocked\": 0\n            }\n        },\n        {\n            \"sku\": \"A02\",\n            \"stock\": {\n                \"count\": \"10\",\n                \"blocked\": 2\n            }\n        },\n        {\n            \"sku\": \"A03\",\n            \"stock\": {\n                \"count\": \"8\",\n                \"blocked\": 0\n            }\n        }\n    ],\n    \"orders\": [\n        {\n            \"id\": \"1001\",\n            \"order_lines\": [\n                {\n                    \"sku\": \"A01\",\n                    \"quantity\": 1\n                },\n                {\n                    \"sku\": \"A02\",\n                    \"quantity\": 20\n                }\n            ]\n        },\n        {\n            \"id\": \"1002\",\n            \"order_lines\": [\n                {\n                    \"sku\": \"A01\",\n                    \"quantity\": 1\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/inventory-levels",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"inventory-levels"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
